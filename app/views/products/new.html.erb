@@ -1,0 +1,10 @@
+
+<h1>NEW</h1>
+ <%= simple_form_for @product do |f| %>
+    <br>
+    <%= f.input :title, input_html: {class: "form-control"}%>
+    <br>
+    <%= f.input :price, input_html: {class: "form-control"} %>
+    <br>
+    <%= f.submit "Create", class: "btn btn-default" %>
+ <% end %>
