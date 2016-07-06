@@ -1,1 +1,10 @@
-213
+
+<h1>EditProduct</h1>
+ <%= simple_form_for @product do |f| %>
+    <br>
+    <%= f.input :title, input_html: {class: "form-control"}%>
+    <br>
+    <%= f.input :price, input_html: {class: "form-control"} %>
+    <br>
+    <%= f.submit "Edit", class: "btn btn-default" %>
+ <% end %>

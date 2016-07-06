@@ -10,28 +10,46 @@
 
 	<nav class="navbar navbar-default">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"> Rails Cart </a>
-    </div>
+      <a class="navbar-brand" href="/"> RailsCart </a>
+      <ul class="nav navbar-nav navbar-left">
+        <li> 
+          <%= link_to "NewProduct", new_product_path %> 
+        </li> 
+        <li> 
+        <%= link_to "Cart", cart_path %>
+        </li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
+          <li> 
+            <%= link_to "Sign up", new_user_registration_path %> 
+          </li>
+          <li> 
+            <%= link_to "Sign in", new_user_session_path %> 
+          </li>
+        <% else %>
+          <li> 
+            <%= link_to("Sign Out", destroy_user_session_path, 
+                              method: :delete ) %> 
+          </li>
+        <% end %>
+      </ul>
+   </div>
+  </nav>
 
-
-  <ul class="nav navbar-nav navbar-right">
-    <% if !current_user %>
-      <li> 
-        <%= link_to "Sign up", new_user_registration_path %> 
-      </li>
-      <li> 
-        <%= link_to "Sign in", new_user_session_path %> 
-      </li>
-    <% else %>
-      <li> 
-        <%= link_to("Sign Out", destroy_user_session_path, 
-                          method: :delete ) %> 
-      </li>
-    <% end %>
-  </ul>
-    </nav>
-
+<div class="wrapper">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
+</div>
+
+<footer class="container" style="margin-top: 300px;">
+  <p class="text-center">
+    <%= link_to "About", page_about_path %>
+    <%= link_to "Contact", page_contact_path %>
+  </p>
+</footer>
+
 
 </body>
 
