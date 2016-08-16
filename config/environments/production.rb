@@ -81,7 +81,7 @@ Rails.application.configure do
     :email => {
       :email_prefix => "[Exception] ",
       :sender_address => %{"Exception notification" <notifier@example.com>},
-      :exception_recipients => 'theochens@gmail.com'
+      :exception_recipients => 'theochens@gmail.com', 'tingyouchen@gmail.com'
     }
 
   config.action_mailer.delivery_method = :smtp
