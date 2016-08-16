@@ -76,4 +76,21 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[Exception] ",
+      :sender_address => %{"Exception notification" <notifier@example.com>},
+      :exception_recipients => 'theochens@gmail.com'
+    }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "smtp.mailgun.org",
+    :user_name => "test@dev.larvata.tw",
+    :password => "12345678!!"
+  }
 end
