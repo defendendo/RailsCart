@@ -90,7 +90,7 @@ Rails.application.configure do
     :address => "smtp.mailgun.org",
     :port => 587,
     :domain => "smtp.mailgun.org",
-    :user_name => "test@dev.larvata.tw",
-    :password => "12345678!!"
+    :user_name => "postmaster@dev.larvata.tw",
+    :password => "1qaz@WSX3edc"        
   }
 end
