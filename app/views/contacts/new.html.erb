@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="contact_here_text font-20 t-center">聯絡我們</div>
+    <div class="contact_here row">
+        <div class="col-sm-6 contact_left">
+            <p class="f-bold font-20">聯絡方式</p>
+            <p class="permit_number m-t-20 f-grey">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                許可證號：衛部器廣字第10411009號 <br>
+                    1041004號 10410015號 10504001號
+            </p>
+            <p class="m-t-10 f-grey">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                service@optvision.com.tw
+            </p>
+            <p class="m-t-10 f-grey">
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+                (0800)800-286
+            </p>
+            <p class="m-t-20 f-bold font-20">關注我們</p>
+            <div>
+                <div class="sns-hover sns-fb font-20 f-bold m-r-20 f-grey">f</div>
+                <div class="sns-hover sns-line font-20 f-grey">Line</div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 contact_right">
+            <%=simple_form_for @contact do |f|%>
+                <%=f.input :name, class: "form-control contact_name m-b-20", placeholder:"您的大名", label:false %>
+                <%=f.input :email, class: "form-control contact_name m-b-20", placeholder:"e-mail", label:false %>
+                <%=f.input :message, class: "form-control contact_name m-b-20", placeholder:"在這裡輸入訊息", label:false %>
+                <button type="submit" class="contact_submit btn btn-primary l-s-4">送出</button>
+             <%end%>
+        </div>
+    </div>
+</div>
