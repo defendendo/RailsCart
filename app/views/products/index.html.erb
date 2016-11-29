@@ -1,4 +1,7 @@
 
+
+<%= link_to "resend confirmation", user_confirmation_path, data: { method: :post } %>
+
 	<div id="products">
 	  <% @products.each do |product| %>
 	    <div class="product">
